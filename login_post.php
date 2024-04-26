@@ -35,22 +35,28 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         $err_s = 1;
     }
 
-    if (isset($user_s)) { //heeeerrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeee
+    if (isset($err_s)) { //heeeerrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeee
         include('login.php');
     }
 }
-if (!isset($user_s)) {
-    $sql = "SELECT job,id,username,password FROM users WHERE username = '$username' AND md5_pass = '$md5_password'";
+if (!isset($err_s)) {
+    $sql = "SELECT * FROM users WHERE username = '$username' AND md5_pass = '$md5_password'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     if (!$row) {
         $notExist = "username or password wrong";
         include('login.php'); //hereeeeeeeeeeeeeeeeeeeeeeeeeeee new
-    } elseif ($row['username'] === $username && $row['password'] === $password) { //hereeeeee   && $row['job'] === 'prof'
+    } elseif ($row['username'] === $username && $row['password'] === $password  && $row['job'] === 'Prof') { //hereeeeee   && $row['job'] === 'prof'
         $_SESSION['id'] = $row['id'];
         $_SESSION['username'] = $row['username'];
+        $_SESSION['job'] = $row['job'];
         header('location:home-prof.php');
         exit();
+    } elseif ($row['username'] === $username && $row['password'] === $password  && $row['job'] === 'Student') {
+        $_SESSION['id'] = $row['id'];
+        $_SESSION['username'] = $row['username'];
+        $_SESSION['job'] = $row['job'];
+        header('location:home-parent.php');
     } else {
         $user_err = 'Wrong username or Password';
         exit();
