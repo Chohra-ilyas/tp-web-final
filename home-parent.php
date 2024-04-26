@@ -26,13 +26,19 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
   </head>
 
   <body>
-    <form method="post">
+    <form action="find-post.php" method="post">
       <div id="top-container">
         <div>
           <img src="./images/no-picture.jpg" alt="" id="pfp">
           <?php echo  $getUser['username']  ?>
         </div>
-        <input type="text" id="post-search" placeholder="search for a post">
+
+        <div>
+          <p>find post by date</p>
+          <input type="date" class="postfind" name="post-date1">
+          <input type="date" class="postfind2" name="post-date2">
+          <button type="submit">find</button>
+        </div>
 
         <a href="logout.php">logout</a>
       </div>
