@@ -76,7 +76,7 @@ if (isset($_POST["submit"])) {
   }
 
   $old_user = $parent['username'];
-  $sql = "UPDATE `users` SET `username`='$username','password'='$password','email'='$email' WHERE username = '$old_user' ;";
+  $sql = "UPDATE users SET `username`='$username',`password`='$password',`email`='$email' WHERE `username` = '$old_user' ;";
   mysqli_query($conn, $sql); //  hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-  header("location:find-parent.php");
+  header("location:home-prof.php");
 }

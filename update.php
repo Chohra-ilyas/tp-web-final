@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include("./include/connections.php");
 $theparent = $_SESSION['theparent'];
 $result = mysqli_query($conn, "SELECT * FROM users WHERE username ='$theparent' and job='Student' limit 1");
