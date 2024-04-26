@@ -1,0 +1,41 @@
+#top-container{
+  height: 200px;
+  width: 100%;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+#teachers-container{
+  float: right;
+  width: 250px;
+  height: 100vh;
+  background-color: bisque;
+}
+#parents-container{
+  float: left;
+  width: 250px;
+  height: 100vh;
+  background-color: bisque;
+}#post-search{
+  width: 400px;
+  height: 30px;
+}
+#pfp{
+  height: 75px;
+}
+
+#main-box{
+  display: flex;
+  justify-content: space-between;
+}
+#post-creation{
+  height: 250px;
+  width: 500px;
+  text-align: top;
+}
+#create-post{
+  display: flex;
+  flex-direction: column-reverse;
+}

@@ -26,13 +26,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     </head>
 
     <body>
-        <form method="post">
+        <form method="post" action="post-find">
             <div id="top-container">
                 <div>
                     <img src="./images/no-picture.jpg" alt="" id="pfp">
                     <?php echo  $getUser['username']  ?>
                 </div>
-                <input type="text" id="post-search" placeholder="search for a post">
+                <input type="text" id="post-search" name="post-find" placeholder="search for a post">
 
                 <a href="logout.php">logout</a>
             </div>
@@ -58,7 +58,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                 <form action="backend-includes/post-create.php" method="post">
                     <div id="posts-container">
                         <div id="create-post">
-                            <input type="text" name="content" id="post-creation" placeholder="here the teacher writes the post">
+                            <textarea name="content" id="post-creation" cols="30" rows="10" placeholder="here the teacher writes the post"></textarea>
+
                             <button>post</button>
                         </div>
                     </div>
