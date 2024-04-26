@@ -7,6 +7,7 @@
   <div id="right-post">
     <div><?php echo $post['user'] ?></div>
     <div><?php echo $post['content']; ?></div>
+    <div><?php echo $post['date']; ?></div>
     <div>
 
       </form>

@@ -1,0 +1,11 @@
+#post{
+  display: flex;
+  background-color: aqua;
+  width: 520px;
+  flex-direction: column;
+
+}
+#right-post{
+  display: flex;
+  flex-direction: column;
+}
