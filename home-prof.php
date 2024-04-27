@@ -21,7 +21,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./styles/Home.css">
+        <link rel="stylesheet" href="./styles/home.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <title>home</title>
     </head>
@@ -80,6 +80,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                 </div>
             </div>
             <div id="parents-container">
+                <h3>parents : </h3>
                 <?php
                 $getTeacher = mysqli_query($conn, "SELECT * FROM `users` WHERE job='Student'");
                 $teacher_row_count = mysqli_num_rows($getTeacher);

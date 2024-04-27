@@ -26,7 +26,7 @@
         }
         ?>
 
-        <input type="email" placeholder="mobile number OR email" id="email" name="email">
+        <input type="email" placeholder="email" id="email" name="email">
 
         <?php
         if (isset($password_err)) {

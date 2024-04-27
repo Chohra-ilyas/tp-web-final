@@ -21,7 +21,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/Home.css">
+    <link rel="stylesheet" href="./styles/home-parents.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>home</title>
   </head>
@@ -46,10 +46,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         <a href="logout.php">Logout</a>
       </div>
     </form>
-
+  <div  class="main">
     <div id="center">
       <h2>this is where the school's description goes</h2>
-
+      
       <div id="post-bar">
         <?php
         $getPost = mysqli_query($conn, "SELECT * FROM posts");
@@ -59,25 +59,28 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             include("single-post.php");
           }
         }
-
+        
         ?>
       </div>
     </div>
     <div id="parents-container">
+      <h3>prof : </h3>
       <?php
       $getTeacher = mysqli_query($conn, "SELECT * FROM `users` WHERE job='Prof'");
       $teacher_row_count = mysqli_num_rows($getTeacher);
-
+      
       if ($teacher_row_count > 0) {
         while ($teacher = mysqli_fetch_assoc($getTeacher)) {
           include("single-teacher.php");
         }
       }
-
-      ?></div>
+      
+      ?>
+      </div>
     </div>
+  </div>
   </body>
-
+  
   </html>
 <?php
 
