@@ -21,52 +21,48 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./styles/home.css">
+        <link rel="stylesheet" href="./styles/Home.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <title>home</title>
     </head>
 
     <body>
         <form action="find-post.php" method="post">
             <div id="top-container">
-                <div>
+                <div class="userInfo">
                     <img src="./images/no-picture.jpg" alt="" id="pfp">
-                    <?php echo  $getUser['username']  ?>
+                    <?php echo  "<span>".$getUser['username']."</span>"  ?>
                 </div>
 
-                <div>
-                    <p>find post by date</p>
+                <div class="findByDate">
+                    <h3>find post by date :</h3>
+                    <h4>date start :</h4>
                     <input type="date" class="postfind" name="post-date1">
+                    <h4>date end :</h4>
                     <input type="date" class="postfind2" name="post-date2">
-                    <button type="submit">find</button>
+                    <button type="submit">Find</button>
                 </div>
 
-                <a href="logout.php">logout</a>
+                <a href="logout.php">Logout</a>
             </div>
         </form>
         <div id="main-box">
-            <div id="">
-                <h1>Operations Menu</h1>
-                <ul>
-                    <li><a href="signup.php">add a parent</a></li>
-                    <br>
-                    <li>
-                        <form action="find-parent.php" method="Post">
-                            <input type="text" name="parent-find" placeholder="find,modify and delete a parent account">
-                            <button type="submit">find</button>
-
-                        </form>
-                    </li>
-
-                </ul>
+            <div id="leftSide">
+                <i class="bi bi-list-ul"></i>
+                <h2>Operations Menu</h2>
+                    <a href="signup.php">Add a parent</a>
+                    <form action="find-parent.php" method="Post">
+                        <input type="text" name="parent-find" placeholder="find,modify and delete a parent account :">
+                        <button type="submit">find</button>
+                    </form>
             </div>
             <div id="center">
-                <div>this is where the school's description goes</div>
+                <h2>this is where the school's description goes</h2>
                 <form action="backend-includes/post-create.php" method="post">
                     <div id="posts-container">
                         <div id="create-post">
-                            <textarea name="content" id="post-creation" cols="30" rows="10" placeholder="here the teacher writes the post"></textarea>
-
                             <button>post</button>
+                            <textarea name="content" id="post-creation" cols="30" rows="10" placeholder="here the teacher writes the post"></textarea>
                         </div>
                     </div>
                 </form>
@@ -97,9 +93,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                 ?></div>
         </div>
     </body>
-
     </html>
-
 <?php
 
 } else {

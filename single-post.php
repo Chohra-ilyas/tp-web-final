@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="styles/post.css">
 
 <div id="post">
-  <div>
+  <div class="user">
     <img src="images/no-picture.jpg" style="width:75px; margin-right:5px;">
+    <h3><?php echo $post['user'] ?></h3>
   </div>
   <div id="right-post">
-    <div><?php echo $post['user'] ?></div>
     <div><?php echo $post['content']; ?></div>
     <div><?php echo $post['date']; ?></div>
     <div>

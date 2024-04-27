@@ -28,9 +28,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
   <body>
     <form action="find-post.php" method="post">
       <div id="top-container">
-        <div>
+        <div class="userInfo">
           <img src="./images/no-picture.jpg" alt="" id="pfp">
-          <?php echo  $getUser['username']  ?>
+          <?php echo $getUser['username']  ?>
         </div>
 
         <div>
