@@ -8,7 +8,7 @@ if (empty($_POST['post-date1']) || empty($_POST['post-date2']) && $_SESSION['job
 } else {
   $date1 = $_POST['post-date1'];
   $date2 = $_POST['post-date2'];
-  $sql = "SELECT * FROM posts WHERE `date`>'$date1' and `date`<'$date2'  ";
+  $sql = "SELECT * FROM posts WHERE `date`>='$date1' and `date`<='$date2'  ";
   $res = mysqli_query($conn, $sql);
   $row_count = mysqli_num_rows($res);
 

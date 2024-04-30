@@ -1,11 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Outfit:wght@100..900&display=swap");
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Bai Jamjuree;
+}
+body{
+  background-color: #2a3741;
+}
 #post{
   display: flex;
-  background-color: aqua;
-  width: 520px;
+  width: 600px;
   flex-direction: column;
-
+  align-items: center;
+  justify-content: center;
+  height: 400px;
 }
-#right-post{
+.user > h3 {
+  color: #cad3c8;
+}
+#right-post {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#right-post > * {
+  font-size: 20px;
+  color: #f1f2f6;
+  margin-top: 15px;
+}
+.user{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #1e272e;
+  margin: 20px;
+  width: 90%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.user > img{
+  border-radius: 50%;
 }
